@@ -1,3 +1,9 @@
+# ATTENTION
+
+*This docker image is vulnerable to [CVE-2015-7547](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7547). I'll fix this asap.*
+
+# ATTENTION
+
 This builds a docker container with owncloud running in it. It uses a docker volume in order to allow you to persist the data and config between different containers. It is setup for usage with MySQL and Sqlite but, it does not have a linked MySQL container. Pull-Requests are welcome!
 
 # Usage #
