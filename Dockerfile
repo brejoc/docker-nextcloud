@@ -1,6 +1,7 @@
 FROM phusion/baseimage:latest
 MAINTAINER Jochen Breuer "brejoc@gmail.com"
 RUN apt-get -y update
+RUN apt-get -y upgrade
 RUN apt-get install -y apache2 php5 php5-gd php-xml-parser php5-intl php5-mysqlnd php5-json php5-mcrypt php5-sqlite smbclient curl libcurl3 php5-curl bzip2 wget
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
