@@ -1,9 +1,3 @@
-# ATTENTION
-
-*This docker image is vulnerable to [CVE-2015-7547](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7547). I'll fix this asap.*
-
-# ATTENTION
-
 This builds a docker container with owncloud running in it. It uses a docker volume in order to allow you to persist the data and config between different containers. It is setup for usage with MySQL and Sqlite but, it does not have a linked MySQL container. Pull-Requests are welcome!
 
 # Usage #
@@ -14,9 +8,9 @@ run `docker build -t 'brejoc/owncloud' .`
 
 ## Running ##
 
-1. You need to build the image, since this Dockerfile is not uploaded to the docker registry.
+1. You can either build this image locally or just fetch it from the docker hub: `brejoc/owncloud`.
 2. Run it `docker run -d -m 1g -p 127.0.0.1:9000:80 --name="my_docker_owncloud" -v /var/owncloud/data:/var/www/owncloud/data -v /var/owncloud/config:/var/www/owncloud/config brejoc/owncloud`
-3. Setup a reverse proxy to it
+3. Setup a reverse proxy to server it from port 80:
 
 ```
 server {
