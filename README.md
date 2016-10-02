@@ -1,3 +1,5 @@
+[![](https://images.microbadger.com/badges/image/brejoc/owncloud.svg)](https://microbadger.com/images/brejoc/owncloud "Get your own image badge on microbadger.com")
+
 This builds a docker container with owncloud running in it. It uses a docker volume in order to allow you to persist the data and config between different containers. It is setup for usage with MySQL and Sqlite but, it does not have a linked MySQL container. Pull-Requests are welcome!
 
 # Usage #
