@@ -1,14 +1,18 @@
-FROM phusion/baseimage:0.9.15
-MAINTAINER Jochen Breuer "brejoc@gmail.com"
+FROM phusion/baseimage:latest
+MAINTAINER Jochen Breuer "arpitbatra123@gmail.com"
 RUN apt-get -y update
-RUN apt-get install -y apache2 mariadb-server libapache2-mod-php7.0
-RUN apt-get install -y php7.0-gd php7.0-json php7.0-mysql php7.0-curl php7.0-mbstring
-RUN apt-get install -y php7.0-intl php7.0-mcrypt php-imagick php7.0-xml php7.0-zip
+RUN add-apt-repository -y ppa:ondrej/php
+RUN apt-get update  
+RUN apt-get install -y --force-yes apache2 mariadb-server libapache2-mod-php
+RUN apt-get install -y  --force-yes php7.0-gd php7.0-json php7.0-mysql php7.0-curl php7.0-mbstring
+RUN apt-get install -y  --force-yes php7.0-intl php7.0-mcrypt php-imagick php7.0-xml php7.0-zip
+RUN apt-get install -y wget unzip
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
 
-RUN curl -k https://download.nextcloud.com/server/releases/nextcloud-12.0.3.tar.bz2 | tar jx -C /var/www/
+RUN wget https://download.nextcloud.com/server/releases/nextcloud-12.0.3.zip
+RUN unzip nextcloud-12.0.3.zip -d /var/www 
 RUN mkdir /var/www/nextcloud/data
 RUN chown -R www-data:www-data /var/www/nextcloud
 RUN chmod 770 -R /var/www/nextcloud/data
