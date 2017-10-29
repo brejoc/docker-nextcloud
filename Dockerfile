@@ -6,7 +6,9 @@ RUN apt-get update
 RUN apt-get install -y --force-yes apache2 mariadb-server libapache2-mod-php
 RUN apt-get install -y  --force-yes php7.0-gd php7.0-json php7.0-mysql php7.0-curl php7.0-mbstring
 RUN apt-get install -y  --force-yes php7.0-intl php7.0-mcrypt php-imagick php7.0-xml php7.0-zip
-RUN apt-get install -y php-mysql php-zip php-gd php-json php-curl php-mbstring php-intl php-mcrypt php-imagick php-xml 
+RUN apt-get install -y php-mysql php-zip php-gd php-json php-curl php-mbstring php-intl php-mcrypt php-imagick php-xml
+RUN apt-get install -y sqlite3 libsqlite3-dev
+RUN apt-get install -y bzip2 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
