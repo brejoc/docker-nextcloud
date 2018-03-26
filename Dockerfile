@@ -20,7 +20,7 @@ RUN echo "ServerName localhost">>/etc/apache2/apache2.conf
 
 RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
 
-RUN curl -k https://download.nextcloud.com/server/releases/nextcloud-12.0.3.tar.bz2 | tar jx -C /var/www/ 
+RUN curl -k https://download.nextcloud.com/server/releases/nextcloud-13.0.1.tar.bz2 | tar jx -C /var/www/ 
 RUN mkdir /var/www/nextcloud/data
 RUN chown -R www-data:www-data /var/www/nextcloud
 RUN chmod 770 -R /var/www/nextcloud/data
