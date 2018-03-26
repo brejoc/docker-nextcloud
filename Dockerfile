@@ -1,4 +1,5 @@
 FROM phusion/baseimage:0.9.22
+MAINTAINER Jochen Breuer "brejoc@gmail.com"
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -y update
