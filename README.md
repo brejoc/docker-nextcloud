@@ -1,29 +1,29 @@
 [![](https://images.microbadger.com/badges/image/brejoc/owncloud.svg)](https://microbadger.com/images/brejoc/owncloud "Get your own image badge on microbadger.com")
 
-This builds a docker container with owncloud running in it. It uses a docker volume in order to allow you to persist the data and config between different containers. It is setup for usage with MySQL and Sqlite but, it does not have a linked MySQL container. Pull-Requests are welcome!
+This builds a docker container with nextcloud running in it. It uses a docker volume in order to allow you to persist the data and config between different containers. It is setup for usage with MySQL and Sqlite but, it does not have a linked MySQL container. Pull-Requests are welcome!
 
 # Usage #
 
 ## Building the image ##
 
-run `docker build -t 'brejoc/owncloud' .`
+run `docker build -t 'brejoc/nextcloud' .`
 
 ## Running ##
 
-1. You can either build this image locally or just fetch it from the docker hub: `brejoc/owncloud`.
-2. Run it `docker run -d -m 1g -p 127.0.0.1:9000:80 --name="my_docker_owncloud" -v /var/owncloud/data:/var/www/owncloud/data -v /var/owncloud/config:/var/www/owncloud/config brejoc/owncloud`
+1. You can either build this image locally or just fetch it from the docker hub: `brejoc/nextcloud`.
+2. Run it `docker run -d -m 1g -p 127.0.0.1:9000:80 --name="my_docker_nextcloud" -v /var/nextcloud/data:/var/www/nextcloud/data -v /var/nextcloud/config:/var/www/nextcloud/config brejoc/nextcloud`
 3. Setup a reverse proxy to server it from port 80:
 
 ```
 server {
 	     listen 80;
-	     server_name owncloud.example.com;
+	     server_name nextcloud.example.com;
 	     return 301 https://$host$request_uri;
 }
 
 server {
 	listen 443;
-	server_name owncloud.example.com;
+	server_name nextcloud.example.com;
 	ssl on;
 	ssl_certificate /etc/ssl/private/example_com.cert;
 	ssl_certificate_key /etc/ssl/private/example_com.key;
